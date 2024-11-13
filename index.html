@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق ويب بسيط</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>أهلاً بك في تطبيق الويب البسيط</h1>
+    <p>:أدخل اسمك لتلقي رسالة ترحيب</p>
+
+    <form action="" method="GET" onsubmit="showGreeting(event)">
+        <input type="text" id="username" placeholder="أدخل اسمك هنا" required>
+        <button type="submit">إرسال</button>
+    </form>
+
+    <h2 id="greetingMessage"></h2>
+
+    <script>
+        function showGreeting(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const greetingMessage = document.getElementById('greetingMessage');
+            greetingMessage.textContent = `مرحباً، ${username}! نحن سعداء بوجودك هنا.`;
+        }
+    </script>
+
+</body>
+</html>
